@@ -33,3 +33,13 @@ if ($post2) {
 } else {
     echo"Le poste d'existe pas".PHP_EOL;
 }
+// Lister tous les postes dont le nombre de like est supérieur à un nombre donné
+$nbLikes=70000;
+$post3=$postRepository->findBy(["nb_likes_post"=>$nbLikes]); // Impossible d'utiliser donc l'opérateur est supérieur avec la méthode by. Elle se limite uniquement à l'opérateur d'égalité =>
+
+if ($post3) {
+    echo $post3->getTitre()."\n";
+} else {
+    echo "Le poste d'existe pas".PHP_EOL;
+}
+
